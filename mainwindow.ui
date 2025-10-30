@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Music Player - DSA Project</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="lblTitle">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>11</pointsize>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QMainWindow {
+    background-color: #f0f0f0;
+}
+
+QLabel#lblTitle {
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+	text-align:center;
+}
+
+QLabel#lblCurrentSong {
+    color: #34495e;
+    background-color: white;
+    padding: 8px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#btnPlay {
+    background-color: #27ae60;
+}
+
+QPushButton#btnPlay:hover {
+    background-color: #229954;
+}
+
+QPushButton#btnStop {
+    background-color: #e74c3c;
+}
+
+QPushButton#btnStop:hover {
+    background-color: #c0392b;
+}
+
+QGroupBox {
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #2c3e50;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #3498db;
+    border-radius: 4px;
+}</string>
+      </property>
+      <property name="text">
+       <string>                                                                                                                     Music Player</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::RichText</enum>
+      </property>
+      <property name="margin">
+       <number>1</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lblCurrentSong">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QMainWindow {
+    background-color: #f0f0f0;
+}
+
+QLabel#lblTitle {
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+QLabel#lblCurrentSong {
+    color: #34495e;
+    background-color: white;
+    padding: 8px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#btnPlay {
+    background-color: #27ae60;
+}
+
+QPushButton#btnPlay:hover {
+    background-color: #229954;
+}
+
+QPushButton#btnStop {
+    background-color: #e74c3c;
+}
+
+QPushButton#btnStop:hover {
+    background-color: #c0392b;
+}
+
+QGroupBox {
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #2c3e50;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #3498db;
+    border-radius: 4px;
+}</string>
+      </property>
+      <property name="text">
+       <string>No song loaded</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayoutMain">
+      <item>
+       <widget class="QTextEdit" name="textPlaylist">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QMainWindow {
+    background-color: #f0f0f0;
+}
+
+QLabel#lblTitle {
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+QLabel#lblCurrentSong {
+    color: #34495e;
+    background-color: white;
+    padding: 8px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#btnPlay {
+    background-color: #27ae60;
+}
+
+QPushButton#btnPlay:hover {
+    background-color: #229954;
+}
+
+QPushButton#btnStop {
+    background-color: #e74c3c;
+}
+
+QPushButton#btnStop:hover {
+    background-color: #c0392b;
+}
+
+QGroupBox {
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #2c3e50;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #3498db;
+    border-radius: 4px;
+}</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalRight">
+        <item>
+         <widget class="QSlider" name="progressSlider">
+          <property name="styleSheet">
+           <string notr="true">QMainWindow {
+    background-color: #f0f0f0;
+}
+
+QLabel#lblTitle {
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+QLabel#lblCurrentSong {
+    color: #34495e;
+    background-color: white;
+    padding: 8px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#btnPlay {
+    background-color: #27ae60;
+}
+
+QPushButton#btnPlay:hover {
+    background-color: #229954;
+}
+
+QPushButton#btnStop {
+    background-color: #e74c3c;
+}
+
+QPushButton#btnStop:hover {
+    background-color: #c0392b;
+}
+
+QGroupBox {
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #2c3e50;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #3498db;
+    border-radius: 4px;
+}</string>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="timeLayout">
+          <item>
+           <widget class="QLabel" name="lblTime">
+            <property name="styleSheet">
+             <string notr="true">
+</string>
+            </property>
+            <property name="text">
+             <string>00:00</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblDuration">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>00:00</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridButtons">
+          <item row="0" column="3">
+           <widget class="QPushButton" name="btnNext">
+            <property name="styleSheet">
+             <string notr="true">QMainWindow {
+    background-color: #f0f0f0;
+}
+
+QLabel#lblTitle {
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+QLabel#lblCurrentSong {
+    color: #34495e;
+    background-color: white;
+    padding: 8px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#btnPlay {
+    background-color: #27ae60;
+}
+
+QPushButton#btnPlay:hover {
+    background-color: #229954;
+}
+
+QPushButton#btnStop {
+    background-color: #e74c3c;
+}
+
+QPushButton#btnStop:hover {
+    background-color: #c0392b;
+}
+
+QGroupBox {
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #2c3e50;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #3498db;
+    border-radius: 4px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Next</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="btnAddBegin">
+            <property name="styleSheet">
+             <string notr="true">QPushButton#btnAddBegin {
+    background-color: #003300; /* Green */
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}</string>
+            </property>
+            <property name="text">
+             <string>Add Begin</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="btnAddEnd">
+            <property name="styleSheet">
+             <string notr="true">QPushButton#btnAddEnd {
+    background-color: #003300; /* Dark Green */
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton#btnAddEnd:hover {
+    background-color: #4CAF50; /* Lighter green */
+}
+
+QPushButton#btnAddEnd:pressed {
+    background-color: #2E7D32; /* Darker green */
+}
+</string>
+            </property>
+            <property name="text">
+             <string>Add End</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="btnDelete">
+            <property name="styleSheet">
+             <string notr="true">QPushButton#btnDelete {
+    background-color: #990000; /* Dark Red */
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton#btnDelete:hover {
+    background-color: #F44336; /* Lighter red */
+}
+
+QPushButton#btnDelete:pressed {
+    background-color: #B71C1C; /* Even darker red */
+}
+</string>
+            </property>
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QPushButton" name="btnDeleteEnd">
+            <property name="styleSheet">
+             <string notr="true">QPushButton#btnDeleteEnd {
+    background-color: #990000; /* Dark Red */
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton#btnDeleteEnd:hover {
+    background-color: #F44336; /* Lighter red */
+}
+
+QPushButton#btnDeleteEnd:pressed {
+    background-color: #B71C1C; /* Even darker red */
+}
+
+</string>
+            </property>
+            <property name="text">
+             <string>Delete End</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="btnSearch">
+            <property name="styleSheet">
+             <string notr="true">QPushButton#btnSearch {
+    background-color: #9900CC; /* Dark Red */
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton#btnSearch:hover {
+    background-color: #9933FF; /* Lighter red */
+}
+
+QPushButton#btnSearch:pressed {
+    background-color: #9999FF; /* Even darker red */
+}
+
+</string>
+            </property>
+            <property name="text">
+             <string>Search</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="btnPrev">
+            <property name="styleSheet">
+             <string notr="true">QMainWindow {
+    background-color: #f0f0f0;
+}
+
+QLabel#lblTitle {
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+QLabel#lblCurrentSong {
+    color: #34495e;
+    background-color: white;
+    padding: 8px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#btnPlay {
+    background-color: #27ae60;
+}
+
+QPushButton#btnPlay:hover {
+    background-color: #229954;
+}
+
+QPushButton#btnStop {
+    background-color: #e74c3c;
+}
+
+QPushButton#btnStop:hover {
+    background-color: #c0392b;
+}
+
+QGroupBox {
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #2c3e50;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #3498db;
+    border-radius: 4px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Previous</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="btnPlay">
+            <property name="styleSheet">
+             <string notr="true">QMainWindow {
+    background-color: #f0f0f0;
+}
+
+QLabel#lblTitle {
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+QLabel#lblCurrentSong {
+    color: #34495e;
+    background-color: white;
+    padding: 8px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#btnPlay {
+    background-color: #27ae60;
+}
+
+QPushButton#btnPlay:hover {
+    background-color: #229954;
+}
+
+QPushButton#btnStop {
+    background-color: #e74c3c;
+}
+
+QPushButton#btnStop:hover {
+    background-color: #c0392b;
+}
+
+QGroupBox {
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #2c3e50;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #3498db;
+    border-radius: 4px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Play</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="btnStop">
+            <property name="styleSheet">
+             <string notr="true">QMainWindow {
+    background-color: #f0f0f0;
+}
+
+QLabel#lblTitle {
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+QLabel#lblCurrentSong {
+    color: #34495e;
+    background-color: white;
+    padding: 8px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+}
+
+QPushButton#btnPlay {
+    background-color: #27ae60;
+}
+
+QPushButton#btnPlay:hover {
+    background-color: #229954;
+}
+
+QPushButton#btnStop {
+    background-color: #e74c3c;
+}
+
+QPushButton#btnStop:hover {
+    background-color: #c0392b;
+}
+
+QGroupBox {
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #2c3e50;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #bdc3c7;
+    height: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #3498db;
+    border-radius: 4px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Stop</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QPushButton" name="btnExit">
+            <property name="styleSheet">
+             <string notr="true">QPushButton#btnExit {
+    background-color: #FF0000; /* Dark Red */
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton#btnExit:hover {
+    background-color: #CC3333; /* Lighter red */
+}
+
+QPushButton#btnExit:pressed {
+    background-color: #CC3333; /* Even darker red */
+}
+
+</string>
+            </property>
+            <property name="text">
+             <string>Exit</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
